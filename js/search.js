@@ -152,10 +152,15 @@ function actions(node) {
   // Top left corner
   if (x === 0 && y === node.rows - 1) {
     // Check down and right
-    if (!getTargetNode(x,y-1).state || getTargetNode(x,y-1).state === 'goal') {
+    if (!getTargetNode(x,y-1).state
+      || getTargetNode(x,y-1).state === 'goal'
+      || getTargetNode(x,y-1).state === 'start'
+      ) {
       actions.push('down');
     }
-    if (!getTargetNode(x+1,y).state || getTargetNode(x+1,y).state === 'goal') {
+    if (!getTargetNode(x+1,y).state
+      || getTargetNode(x+1,y).state === 'goal'
+      || getTargetNode(x+1,y).state === 'start') {
       actions.push('right');
     }
   }
@@ -163,10 +168,14 @@ function actions(node) {
   // Top right corner
   else if (x === node.columns - 1 && y === node.rows - 1) {
     // Check down and left
-    if (!getTargetNode(x,y-1).state || getTargetNode(x,y-1).state === 'goal') {
+    if (!getTargetNode(x,y-1).state
+      || getTargetNode(x,y-1).state === 'goal'
+      || getTargetNode(x,y-1).state === 'start') {
       actions.push('down');
     }
-    if (!getTargetNode(x-1,y).state || getTargetNode(x-1,y).state === 'goal') {
+    if (!getTargetNode(x-1,y).state
+      || getTargetNode(x-1,y).state === 'goal'
+      || getTargetNode(x-1,y).state === 'start') {
       actions.push('left');
     }
   }
@@ -174,13 +183,19 @@ function actions(node) {
   // Anywhere in top row
   else if (x >= 1 && x < node.columns - 1 && y === node.rows - 1) {
     // Check left, down, right
-    if (!getTargetNode(x-1,y).state || getTargetNode(x-1,y).state === 'goal') {
+    if (!getTargetNode(x-1,y).state
+      || getTargetNode(x-1,y).state === 'goal'
+      || getTargetNode(x-1,y).state === 'start') {
       actions.push('left');
     }
-    if (!getTargetNode(x,y-1).state || getTargetNode(x,y-1).state === 'goal') {
+    if (!getTargetNode(x,y-1).state
+      || getTargetNode(x,y-1).state === 'goal'
+      || getTargetNode(x,y-1).state === 'start') {
       actions.push('down');
     }
-    if (!getTargetNode(x+1,y).state || getTargetNode(x+1,y).state === 'goal') {
+    if (!getTargetNode(x+1,y).state
+      || getTargetNode(x+1,y).state === 'goal'
+      || getTargetNode(x+1,y).state === 'start') {
       actions.push('right');
     }
   }
@@ -190,10 +205,14 @@ function actions(node) {
   // Bottom left corner
   else if (x === 0 && y === 1) {
     // Check up and right
-    if (!getTargetNode(x+1,y).state || getTargetNode(x+1,y).state === 'goal') {
+    if (!getTargetNode(x+1,y).state
+      || getTargetNode(x+1,y).state === 'goal'
+      || getTargetNode(x+1,y).state === 'start') {
       actions.push('right');
     }
-    if (!getTargetNode(x,y+1).state || getTargetNode(x,y+1).state === 'goal') {
+    if (!getTargetNode(x,y+1).state
+      || getTargetNode(x,y+1).state === 'goal'
+      || getTargetNode(x,y+1).state === 'start') {
       actions.push('up');
     }
   }
@@ -201,10 +220,14 @@ function actions(node) {
   // Bottom right corner
   else if (x === node.columns - 1 && y === 1) {
     // Check up and left
-    if (!getTargetNode(x-1,y).state || getTargetNode(x-1,y).state === 'goal') {
+    if (!getTargetNode(x-1,y).state
+      || getTargetNode(x-1,y).state === 'goal'
+      || getTargetNode(x-1,y).state === 'start') {
       actions.push('left');
     }
-    if (!getTargetNode(x,y+1).state || getTargetNode(x,y+1).state === 'goal') {
+    if (!getTargetNode(x,y+1).state
+      || getTargetNode(x,y+1).state === 'goal'
+      || getTargetNode(x,y+1).state === 'start') {
       actions.push('up');
     }
   }
@@ -212,27 +235,39 @@ function actions(node) {
   // Anywhere between bottom corners
   else if (x >= 0 && x < node.columns && node.y === 1) {
     // Check up, left, right
-    if (!getTargetNode(x-1,y).state || getTargetNode(x-1,y).state === 'goal') {
+    if (!getTargetNode(x-1,y).state
+      || getTargetNode(x-1,y).state === 'goal'
+      || getTargetNode(x-1,y).state === 'start') {
       actions.push('left');
     }
-    if (!getTargetNode(x+1,y).state || getTargetNode(x+1,y).state === 'goal') {
+    if (!getTargetNode(x+1,y).state
+      || getTargetNode(x+1,y).state === 'goal'
+      || getTargetNode(x+1,y).state === 'start') {
       actions.push('right');
     }
-    if (!getTargetNode(x,y+1).state || getTargetNode(x,y+1).state === 'goal') {
+    if (!getTargetNode(x,y+1).state
+      || getTargetNode(x,y+1).state === 'goal'
+      || getTargetNode(x,y+1).state === 'start') {
       actions.push('up');
     }
   }
 
   //**** Check for left column ****
-  else if (x === 0 && y > 0 && y <= node.rows - 2) {
+  else if (x === 0 && y > 0 && y <= node.rows - 1) {
     // Check right, up, down
-    if (!getTargetNode(x,y-1).state || getTargetNode(x,y-1).state === 'goal') {
+    if (!getTargetNode(x,y-1).state
+      || getTargetNode(x,y-1).state === 'goal'
+      || getTargetNode(x,y-1).state === 'start') {
       actions.push('down');
     }
-    if (!getTargetNode(x+1,y).state || getTargetNode(x+1,y).state === 'goal') {
+    if (!getTargetNode(x+1,y).state
+      || getTargetNode(x+1,y).state === 'goal'
+      || getTargetNode(x+1,y).state === 'start') {
       actions.push('right');
     }
-    if (!getTargetNode(x,y+1).state || getTargetNode(x,y+1).state === 'goal') {
+    if (!getTargetNode(x,y+1).state
+      || getTargetNode(x,y+1).state === 'goal'
+      || getTargetNode(x,y+1).state === 'start') {
       actions.push('up');
     }
   }
@@ -240,29 +275,43 @@ function actions(node) {
   //**** Check for right column ****
   else if (x === node.columns - 1 && y > 0 && y <= node.rows - 1) {
     // Check left, up, down
-    if (!getTargetNode(x-1,y).state || getTargetNode(x-1,y).state === 'goal') {
+    if (!getTargetNode(x-1,y).state
+      || getTargetNode(x-1,y).state === 'goal'
+      || getTargetNode(x-1,y).state === 'start') {
       actions.push('left');
     }
-    if (!getTargetNode(x,y-1).state || getTargetNode(x,y-1).state === 'goal') {
+    if (!getTargetNode(x,y-1).state
+      || getTargetNode(x,y-1).state === 'goal'
+      || getTargetNode(x,y-1).state === 'start') {
       actions.push('down');
     }
-    if (!getTargetNode(x,y+1).state || getTargetNode(x,y+1).state === 'goal') {
+    if (!getTargetNode(x,y+1).state
+      || getTargetNode(x,y+1).state === 'goal'
+      || getTargetNode(x,y+1).state === 'start') {
       actions.push('up');
     }
   }
 
   else {
     // Check up, down, left, right
-    if (!getTargetNode(x-1,y).state || getTargetNode(x-1,y).state === 'goal') {
+    if (!getTargetNode(x-1,y).state
+      || getTargetNode(x-1,y).state === 'goal'
+      || getTargetNode(x-1,y).state === 'start') {
       actions.push('left');
     }
-    if (!getTargetNode(x+1,y).state || getTargetNode(x+1,y).state === 'goal') {
+    if (!getTargetNode(x+1,y).state
+      || getTargetNode(x+1,y).state === 'goal'
+      || getTargetNode(x+1,y).state === 'start') {
       actions.push('right');
     }
-    if (!getTargetNode(x,y-1).state || getTargetNode(x,y-1).state === 'goal') {
+    if (!getTargetNode(x,y-1).state
+      || getTargetNode(x,y-1).state === 'goal'
+      || getTargetNode(x,y-1).state === 'start') {
       actions.push('down');
     }
-    if (!getTargetNode(x,y+1).state || getTargetNode(x,y+1).state === 'goal') {
+    if (!getTargetNode(x,y+1).state
+      || getTargetNode(x,y+1).state === 'goal'
+      || getTargetNode(x,y+1).state === 'start') {
       actions.push('up');
     }
   }
