@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E7F8FF;
+  background-image: url(../img/sky1.png);
+  background-size: cover;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#tools-ui {
+  position: fixed;
+  font-size: 2vw;
+  padding: 0.25vw;
+  width: 4.25vw;
+  color: rgb(67, 67, 67);
+  background-color: rgb(217,217,217);
+  border-radius: 0 0.5em 0.5em 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.tool-ui-button {
+  margin: .75vh 0;
+}
+
+.tool-ui-button:hover {
+  cursor: pointer;
+}
+
+.start-ui-button {
+  font-size: 0.4em;
+}
+
+.goal-ui-button {
+  font-size: 0.4em;
+}
+
+.tree-ui-button {
+  margin: .75vh auto;
+  width: 1em;
+  height: 1em;
+  background: url(../img/tree.png) no-repeat top left;
+  background-size: contain;
+}
+
+.wall-ui-button {
+  margin: .75vh auto;
+  width: 1em;
+  height: 1em;
+  background: url(../img/brick.png) no-repeat top left;
+  background-size: contain;
+}
+
+.water-ui-button {
+  margin: .75vh auto;
+  width: 1em;
+  height: 1em;
+  background: url(../img/water.jpg) no-repeat top left;
+  background-size: contain;
+}
+
+.restart-ui-button {
+  font-size: 0.2857142857em;
+}
+
+/* Grass Footer */
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 10vh;
+  width: 100vw;
+  background: url(../img/grass.png);
+  background-position: top left;
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+
+/* Map */
+#map {
+  margin: 10vh auto;
+  height: 80vh;
+  width: 80vh;
+}
+
+.node {
+  font-family: 'Inconsolata', monospace;
+  font-size: 0.5em;
+  background-color: white;
+  background-image: url(../img/grass-tile.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: left;
+  border: 1px solid rgb(131, 211, 65);
+  transition: background-color 0.3s ease;
+}
+
+.node:hover {
+  background-color: #E8E8E8;
+}
+
+.start {
+  background-image: url(../img/warrior-start.gif);
+  background-size: cover;
+}
+
+.goal {
+  background-image: url(../img/treasure-end.gif);
+  background-size: cover;
+}
+
+.tree {
+  background-image: url(../img/tree-grass.png);
+  background-size: cover;
+}
+
+.wall {
+  background-image: url(../img/brick.png);
+  background-size: cover;
+}
+
+.water {
+  background-image: url(../img/water.jpg);
+  background-size: cover;
+}
+
+#selected {
+  border: 3px solid gold;
+  -webkit-animation: borderBlink 1s step-end infinite;
+  animation: borderBlink 1s step-end infinite;
+}
+
+@-webkit-keyframes borderBlink {
+  from, to {
+    border-color: white;
+  }
+  50% {
+    border-color: gold;
+  }
+}
+@keyframes borderBlink {
+  from, to {
+    border-color: white;
+  }
+  50% {
+    border-color: gold;
+  }
+}
+
+.path {
+  background: tomato;
+}

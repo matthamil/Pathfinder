@@ -1,0 +1,21 @@
+{
+  "name": "pathfinder",
+  "authors": [
+    "Matt Hamil <j.matthew.hamil@gmail.com>"
+  ],
+  "description": "Pathfinding algorithms implemented in JavaScript",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0"
+  }
+}
