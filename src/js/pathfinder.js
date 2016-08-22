@@ -235,6 +235,7 @@ function loseFocusOnSelected() {
 }
 
 let playButton = document.querySelector('.fa-play-circle-o');
+let stopButton = document.querySelector('.fa-stop-circle-o');
 let defaultTool = document.querySelector('.fa-mouse-pointer');
 let startTool = document.querySelector('.start-ui-button');
 let goalTool = document.querySelector('.goal-ui-button');
@@ -245,6 +246,7 @@ let deleteObjectTool = document.querySelector('.fa-trash');
 let reset = document.querySelector('.restart-ui-button');
 
 playButton.addEventListener('click', searchForGoal);
+stopButton.addEventListener('click', clearPath);
 defaultTool.addEventListener('click', setStateToSelect);
 startTool.addEventListener('click', setStateToStart);
 goalTool.addEventListener('click', setStateToGoal);
@@ -260,6 +262,7 @@ document.addEventListener('keydown', (e) => {
   if (e.keyCode === 13) {
     currentState = null;
     loseFocusOnSelected();
+    searchForGoal();
   }
 
   // Backspace Key
@@ -273,6 +276,8 @@ document.addEventListener('keydown', (e) => {
     else {
       currentState = 'deleteObject';
     }
+
+    clearPath();
   }
 });
 

@@ -58,7 +58,7 @@ function breadthFirstSearch(initialState, goalTest, actions, successor) {
   // Actions other than push() and shift() are prohibited.
   let fringe = [];
   if (goalTest(initialState)) {
-      console.log("Initial state is the goal state.");
+      // console.log("Initial state is the goal state.");
       return [initialState];
   }
 
@@ -66,24 +66,24 @@ function breadthFirstSearch(initialState, goalTest, actions, successor) {
   fringe.push(new searchNode(null, initialState, null));
   let expanded = [];
   while (fringe.length !== 0) {
-    console.log("Fringe: " + fringe.map((node) =>
-      `${node.x}, ${node.y}`));
+    // console.log("Fringe: " + fringe.map((node) =>
+    //   `${node.x}, ${node.y}`));
 
     // Pop an element out of the queue to expand.
     let parent = fringe.shift();
-    console.log("Popped: ", parent.state);
+    // console.log("Popped: ", parent.state);
     let newChildStates = [];
 
     // Child states of the current node
     let actionsList = actions(parent.state);
 
-    console.log(`Found ${actionsList.length} successors of (${parent.state.x},
-      ${parent.state.y}): ${actionsList}`);
+    // console.log(`Found ${actionsList.length} successors of (${parent.state.x},
+    //   ${parent.state.y}): ${actionsList}`);
 
       // Add the node to the expanded list to prevent re-expansion.
       expanded.push(parent.state);
-      console.log("Expanded list: ", expanded);
-      console.log("\n");
+      // console.log("Expanded list: ", expanded);
+      // console.log("\n");
 
       // Create successors of each node and push them onto the fringe.
       for (let i = 0; i < actionsList.length; i++) {
@@ -93,36 +93,35 @@ function breadthFirstSearch(initialState, goalTest, actions, successor) {
           // If the goal is found,
           // returns the path to the goal.
           if (goalTest(newS)) {
-              console.log("FOUND GOAL!", newS);
+              // console.log("FOUND GOAL!", newS);
               return newN.getPath();
           }
 
           // If the successor is already expanded,
           // don't add it to the fringe.
           else if (expanded.indexOf(newS) !== -1) {
-              console.log("Successor " + newS + " of " + parent.state + " already expanded.");
-              console.log("Not adding " + newS + " to the fringe.");
-              console.log("\n");
+              // console.log("Successor " + newS + " of " + parent.state + " already expanded.");
+              // console.log("Not adding " + newS + " to the fringe.");
+              // console.log("\n");
           }
 
           // If the successor is already in the fringe,
           // don't add it to the fringe again.
           else if (fringe.map(function(item){return item.state}).indexOf(newN.state) !== -1) {
-              console.log(newS + " is already in the fringe.");
+              // console.log(newS + " is already in the fringe.");
           }
 
           // Push new successors to the fringe.
           else {
-              console.log("Discovered " + newN.state + " with step cost "
-                  + actionsList[i].cost + " from " + parent.state);
-              console.log("Pushing to fringe: " + newS);
+              // console.log("Discovered " + newN.state + " with step cost "
+              //     + actionsList[i].cost + " from " + parent.state);
+              // console.log("Pushing to fringe: " + newS);
               newChildStates.push(newS);
               fringe.push(newN);
-              console.log("Path: ", newN.getPath());
-              // console.log("Current fringe: " + fringe.map(function(city){
-              //         return city.state;
-              //     }));
-              console.log("\n");
+              // console.log("Path: ", newN.getPath());
+              // // console.log("Current fringe: " + fringe.map(function(city){
+              // //         return city.state;
+              // //     }));
           }
       }
   }
@@ -281,8 +280,8 @@ function successor(node, action) {
   // this function should be able to return a node
   //
   // If called like:
-  // successor(state, left);
-  // it should return the node at (state.x -1, state.y)
+  // successor(node, left);
+  // it should return the node at (node.x -1, node.y)
   let map = gameMap.nodes;
   let x = node.x;
   let y = node.y;
