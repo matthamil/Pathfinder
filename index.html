@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pathfinder</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather:700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="https://use.fontawesome.com/5b76e3c014.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <!--
+    tools-ui:
+    Contains controls to edit the pathfinding map
+    -->
+    <div id="tools-ui">
+      <i class="fa fa-play-circle-o tool-ui-button" aria-hidden="true"></i>
+      <i class="fa fa-stop-circle-o tool-ui-button" aria-hidden="true"></i>
+      <i class="fa fa-mouse-pointer tool-ui-button" aria-hidden="true"></i>
+      <div class="start-ui-button tool-ui-button">START</div>
+      <div class="goal-ui-button tool-ui-button">GOAL</div>
+      <div class="tree-ui-button tool-ui-button"></div>
+      <div class="wall-ui-button tool-ui-button"></div>
+      <div class="water-ui-button tool-ui-button"></div>
+      <i class="fa fa-trash tool-ui-button" aria-hidden="true"></i>
+      <div class="restart-ui-button tool-ui-button">RESTART</div>
+    </div>
+
+    <div id="map"></div>
+
+  </div>
+  <footer></footer>
+  <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="minjs/search.js"></script>
+  <script src="minjs/pathfinder.js"></script>
+</body>
+</html>
