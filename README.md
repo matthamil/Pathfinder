@@ -1,4 +1,4 @@
-# Pathfinder
+# Pathfinder [![Build Status](https://travis-ci.org/akram-rameez/Pathfinder.svg?branch=master)](https://travis-ci.org/akram-rameez/Pathfinder)
 ----
 ## what is Pathfinder?
 
