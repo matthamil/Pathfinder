@@ -2,7 +2,7 @@
 ----
 ## what is Pathfinder?
 
-> It's an implementation of a path finding algorithm to connect a **source** to its **destination** on a 2d grid/
+> It's an implementation of a path finding algorithm to connect a **source** to its **destination** on a 2d grid.
 
 ----
 ## Usage
