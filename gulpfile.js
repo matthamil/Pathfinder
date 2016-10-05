@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
+const connect = require('gulp-connect');
 
 // Babel Task
 // Compiles ES6 to ES5
@@ -18,6 +19,10 @@ gulp.task('uglify', () => {
   gulp.src('es5/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('minjs'));
+});
+
+gulp.task('serve', function() {
+  connect.server();
 });
 
 // Default Task
