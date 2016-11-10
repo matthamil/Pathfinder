@@ -1,8 +1,6 @@
 # Pathfinder
 
-## What is Pathfinder?
-
-Pathfinder is a small web app that implements path finding algorithms in JavaScript.
+Pathfinder is a small web app that implements search algorithms in JavaScript.
 
 ## Usage
 
