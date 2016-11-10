@@ -5,10 +5,10 @@ Pathfinder is a small web app that implements search algorithms in JavaScript.
 ## Usage
 
 1. Launch the [website](http://www.matthamil.me/Pathfinder).
-1. Select the *Start* option on the left side menu, and place it on the grid.
-1. Select the *Goal* option on the menu and click to place it on the grid.
-1. Add *obstacles* (trees, walls, or water) on the grid by selecting them from the menu and clicking (or clicking and dragging to add multiple obstacles) onto the grid.
-1. Click the *Play* button to plot the path on the grid.
+1. Select the `Start` option on the left side menu, and place it on the grid.
+1. Select the `Goal` option on the menu and click to place it on the grid.
+1. Add obstacles (trees, walls, or water) on the grid by selecting them from the menu and clicking (or clicking and dragging to add multiple obstacles) onto the grid.
+1. Click the `Play` button to plot the path on the grid.
 
 ## Running Locally
 
