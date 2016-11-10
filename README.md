@@ -12,8 +12,8 @@ Pathfinder is a small web app that implements search algorithms in JavaScript.
 
 ## Running Locally
 
-1. Clone the repository
-1. [node](https://nodejs.org/) must be installed on your system. Check if Node is installed by running `node -v`.
+1. Clone or download the repository.
+1. [Node](https://nodejs.org/) must be installed on your system. Check if Node is installed by running `node -v`.
 1. Make sure you have [Gulp](http://gulpjs.com/) installed to run the `Gulpfile.js` to compile the JavaScript. Without this, browser compatibility issues may occur.
 1. Run the following commands in your Terminal:
 
