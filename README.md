@@ -1,10 +1,9 @@
 # Pathfinder
-----
+
 ## What is Pathfinder?
 
 Pathfinder is a small web app that implements path finding algorithms in JavaScript.
 
-----
 ## Usage
 
 1. Launch the [website](http://www.matthamil.me/Pathfinder).
@@ -13,7 +12,6 @@ Pathfinder is a small web app that implements path finding algorithms in JavaScr
 1. Add *obstacles* (trees, walls, or water) on the grid by selecting them from the menu and clicking (or clicking and dragging to add multiple obstacles) onto the grid.
 1. Click the *Play* button to plot the path on the grid.
 
-----
 ## Running Locally
 
 1. Clone the repository
